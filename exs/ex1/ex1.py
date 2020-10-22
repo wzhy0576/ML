@@ -2,7 +2,7 @@
 """
 Spyder Editor
 
-ML Andrew-Ng ex1
+ML Andrew-Ng ex1 version0
 """
 
 import numpy as np
@@ -16,18 +16,17 @@ plt.show()
 
 def Cost(X, y, theta):
     inner = np.power((X * theta.T - y), 2)
+    print(inner)
     return np.sum(inner) / (2 * len(X))
 
 dataset.insert(0, 'Ones', 1)    #insert in col 0 name Ones value 1
-
 # set X (training data) and y (target variable)
 cols = dataset.shape[1]  # 列数
 X = dataset.iloc[:,0:cols-1]  # 取前cols-1列，即输入向量
 y = dataset.iloc[:,cols-1:cols] # 取最后一列，即目标向量
-
-
 X = np.matrix(X.values)
 y = np.matrix(y.values)
+
 theta = np.matrix([0,0])
 np.array([[0,0]]).shape 
 
@@ -36,7 +35,7 @@ np.array([[0,0]]).shape
 
 def gradientDescent(X, y, theta, alpha, epoch):
     """reuturn theta, cost"""
-    
+        
     temp = np.matrix(np.zeros(theta.shape))  # 初始化一个 θ 临时矩阵(1, 2)
     #parameters = int(theta.flatten().shape[1])  # 参数 θ的数量
     cost = np.zeros(epoch)  # 初始化一个ndarray，包含每次epoch的cost
