@@ -62,7 +62,7 @@ new_theta = lambda X, y, alpha, theta : theta - alpha * (X*theta.T - y).T * X / 
 
 
 
-### 正规方程组：
+### 正规方程：
 
 $$
 \theta=(X^TX)^{-1}X^Ty
